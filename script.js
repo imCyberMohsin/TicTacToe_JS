@@ -1,7 +1,7 @@
 //* Tic Tac Toe - Script 
 
 let clickSound = new Audio("./resources/click-sound.mp3");
-let gameOverSound = new Audio("./resources/game-over-sound.mp3");
+let gameOverSound = new Audio("./resources/win-sound.mp3");
 
 let gameOver = false;
 
@@ -42,6 +42,7 @@ const checkWin = () => {
     winConditions.forEach((eachWin) => {            // iterate each win condtionsw
         if ((boxText[eachWin[0]].innerText === boxText[eachWin[1]].innerText) && (boxText[eachWin[2]].innerText === boxText[eachWin[1]].innerText) && (boxText[eachWin[0]].innerText !== "")) {
             document.querySelector('.info').innerText = boxText[eachWin[0]].innerText + " WON"
+            gameOverSound.play();
             gameOver = true;
 
             // Disable mouse events after win
