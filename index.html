@@ -1,0 +1,49 @@
+<!--! Tic Tac Toe Using HTML, CSS, JS -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <h1>TIC TAC TOE</h1>
+    </nav>
+    <div class="main-container">
+        <!-- Left Container -->
+        <div class="box-container left-container">
+            <div class="win-line"></div>
+            
+            <div class="box bt-0 bl-0"><span class="boxText"></span></div> <!-- Box 0 -->
+            <div class="box bt-0 "><span class="boxText"></span></div> <!-- Box 1 -->
+            <div class="box bt-0 br-0"><span class="boxText"></span></div> <!-- Box 2 -->
+            <div class="box bl-0"><span class="boxText"></span></div> <!-- Box 3 -->
+            <div class="box"><span class="boxText"></span></div> <!-- Box 4 -->
+            <div class="box br-0"><span class="boxText"></span></div> <!-- Box 5 -->
+            <div class="box bb-0 bl-0"><span class="boxText"></span></div> <!-- Box 6 -->
+            <div class="box bb-0"><span class="boxText"></span></div> <!-- Box 7 -->
+            <div class="box bb-0 br-0"><span class="boxText"></span></div> <!-- Box 8 -->
+        </div>
+
+        <!-- Right Container -->
+        <div class="game-info right-container">
+            <h2>GAME INFO</h2>
+            <div class="infobox">
+                <span class="info">TURN FOR : X</span>
+                <button class="resetBtn" id="resetBtn">RESET</button>
+            </div>
+
+            <div class="imgBox">
+                <img src="./resources/winner-money.gif" alt="gif">
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

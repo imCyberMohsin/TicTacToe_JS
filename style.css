@@ -1,0 +1,197 @@
+/*? Tic Tac Toe - CSS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+:root {
+    --accent-color-primary: #14213d;
+    --hover-color: #7c8caf;
+    --accent-color-secondary: #e5e5e5;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--accent-color-primary);
+}
+
+nav {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+}
+
+body h1 {
+    font-size: 3vw;
+    font-weight: 700;
+    border-radius: 5px;
+    background-color: var(--accent-color-secondary);
+    color: var(--accent-color-primary);
+    padding: 6px;
+    margin: 10px;
+    pointer-events: none;
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5vw;
+}
+
+.left-container {
+    padding: 1px;
+    border: 2px solid var(--accent-color-secondary);
+    display: grid;
+    grid-template-rows: repeat(3, 11vw);
+    grid-template-columns: repeat(3, 11vw);
+    position: relative;
+}
+
+.win-line{
+    background-color: red;
+    width: 0;
+    height: 3px;
+    position: absolute;
+    /* transform: translate(3vw, 5vw); */
+    transition: width 0.3s ease-in-out;
+}
+
+.box {
+    background-color: var(--accent-color-secondary);
+    border: 2px solid var(--accent-color-primary);
+    color: var(--accent-color-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 6vw;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.box:hover {
+    background-color: var(--hover-color);
+}
+
+
+/* Tic Tac Toe Like Box by removing the borders */
+.bl-0 {
+    border-left: 0px;
+}
+
+.br-0 {
+    border-right: 0px;
+}
+
+.bt-0 {
+    border-top: 0px;
+}
+
+.bb-0 {
+    border-bottom: 0px;
+}
+
+
+/*? Right Container */
+.right-container {
+    border: 2px solid var(--accent-color-secondary);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--accent-color-secondary);
+}
+
+.right-container h2 {
+    font-size: 5vw;
+    border-bottom: 2px solid var(--accent-color-secondary);
+    margin: 3% 0;
+}
+
+.infobox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.infobox .info {
+    font-size: 3vw;
+    margin: 3% 0;
+}
+
+.infobox .resetBtn {
+    padding: 4% 8%;
+    border-radius: 6px;
+    border: none;
+    font-size: 1.5vw;
+    color: var(--accent-color-primary);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.infobox button:active {
+    box-shadow: 0 0 5px 2px var(--hover-color);
+}
+
+.imgBox img {
+    margin: 10px;
+    width: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+
+/*? Media Query */
+@media all and (max-width:600px) {
+    body h1 {
+        font-size: 7vw;
+    }
+
+    .main-container {
+        flex-direction: column;
+        gap: 3vw;
+    }
+
+    .left-container {
+        grid-template-rows: repeat(3, 22vw);
+        grid-template-columns: repeat(3, 22vw);
+        position:unset;
+    }
+
+    .box {
+        font-size: 9vw;
+    }
+
+    .right-container h2 {
+        font-size: 8vw;
+    }
+
+    .infobox .info {
+        font-size: 5vw;
+    }
+
+    .infobox .resetBtn {
+        font-size: 3vw;
+        padding: 8% 20%;
+        font-weight: 600;
+    }
+
+    .imgBox img {
+        margin: 0px;
+    }
+
+    .win-line{
+        display: none;
+    }
+}
